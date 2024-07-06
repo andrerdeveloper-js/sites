@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Biblioteca</title>
+</head>
+
+<body>
+    <div class="corpo">
+        <div class="mensagem">Por favor <span>aguarde...</span></div>
+        <img src="/img/biblioteca.jpg">
+
+        <div class="corpoflex">
+            <div class="raioLuz"></div>
+            <img src="/img/livro.png">
+            <div class="formDiv" data-text="">
+                <h4 class="titulo">Bem Vinda Bb</h4>
+                <h2 class="subtitulo">Adicione sua resposta e vamos ver se passará para o próximo desafio.</h2>
+                <div id="download"></div>
+                <div class="inputs">
+                    <label for="pergunta">Sua Resposta
+                        <input id="pergunta" name="pergunta" type="text" placeholder="digite sua resposta">
+                    </label>
+                </div>
+                <audio id="game" src="audio/game.mp3" preload="auto"></audio>
+                <audio id="sam" src="audio/sam.mp3" preload="auto"></audio>
+                <button class="btn">Verificar</button>
+            </div>
+        </div>
+        <!-- Overlay e Modal -->
+        <div class="overlay" id="ageVerificationOverlay">
+            <div class="modal">
+                <h2>Você é maior de idade?</h2>
+                <h4>Clicando em Sim você aceita os termos</h4>
+                <h4>No campo resposta digite<p class="estilo-p">Desafio</p> </h4>
+                <h4>Assim vai ter o arquivo para começar</h4>
+                <h2>Boa Sorte !</h2>
+                <button id="yesButton">Sim</button>
+                <button id="noButton">Não</button>
+            </div>
+        </div>
+        <div class="final" id="ganhou">
+            <div class="modal2">
+                <h1>Parabéns, você venceu.</h1>
+                <h2>Gostou dos desafios? Compartilha o link !</h2>
+            </div>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

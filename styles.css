@@ -39,14 +39,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
 }
 
 .corpo img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -257,27 +260,6 @@ body {
 }
 
 
-.mensagem {
-    top: 20px;
-    position: absolute;
-    text-align: center;
-    color: rgb(250, 247, 247);
-    z-index: 4;
-    font-size: 2rem;
-    border-bottom: 2px solid rgb(204, 9, 9);
-    display: inline-block;
-    padding-bottom: 2px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: none;
-
-}
-
-.mensagem::after {
-    content: '|';
-    color: rgb(250, 245, 245);
-    animation: piscar .7s infinite;
-
-}
 
 @keyframes piscar {
     0% {
@@ -303,7 +285,7 @@ body {
 
 }
 
-#ganhou {
+.final {
     position: fixed;
     top: 0;
     left: 0;
@@ -313,7 +295,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
 
 }
 
@@ -326,7 +307,20 @@ body {
 
 }
 
-h4 .estilo-p {
+.modal2 .sair{
+    transform: translate(-50, -50);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgb(2, 1, 1);
+    padding: 10px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: color 1s;
+}
+
+h3 .estilo-p {
     color: red;
     font-size: 25px;
     font-family: Arial-black;
@@ -345,6 +339,8 @@ h4 .estilo-p {
     align-items: center;
 
 }
+
+
 
 .modal3 {
     background: #f80202;
@@ -374,10 +370,8 @@ h4 .estilo-p {
     text-align: center;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     max-height: 80%;
-    /* Define a altura máxima do modal */
     overflow-y: auto;
-    /* Adiciona scroll vertical se necessário */
-
+  
 }
 
 #conteudoFormatado {
@@ -387,6 +381,19 @@ h4 .estilo-p {
     /* Aplica negrito ao texto */
     line-height: 1.6;
     /* Espaçamento entre linhas */
+}
+
+.iniciarDivi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(155, 149, 149, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .modal4 .voltar {
@@ -402,20 +409,38 @@ h4 .estilo-p {
     transition: color 1s;
 }
 
-.comecar {
-    visibility: hidden;
+#divVisivel {
+    display: none;
+    z-index: 100;
 }
 
-.acertouRes {
-    visibility: hidden;
+
+#acertou {
+    display: none;
 }
 
-@media screen and (max-width: 600px) {
+#ganhou {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
 
     body {
         background-color: black;
         width: 100vw;
         height: 100vh;
+
+    }
+
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
     }
 
     .corpo {
@@ -423,8 +448,8 @@ h4 .estilo-p {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
 
     }
 
@@ -433,7 +458,7 @@ h4 .estilo-p {
         background-position: center;
         background-repeat: no-repeat;
         width: 500px;
-        height: 100%;
+        height: 100vh;
         margin: 0;
         padding: 0;
 
@@ -445,12 +470,13 @@ h4 .estilo-p {
         position: absolute;
         top: 120px;
         height: 60%;
-        width: 80%;
+        width: 100%;
         backdrop-filter: blur(4px);
         background-color: rgba(2, 0, 0, 0.5);
         border-radius: 10px;
-        margin-right: 10px;
-
+        padding: 10px;
+        left: 17px;
+        border: solid 1px rgb(141, 136, 136);
     }
 
 
@@ -458,7 +484,7 @@ h4 .estilo-p {
         position: absolute;
         left: 10px;
         top: 72%;
-        width: 300px;
+        width: 360px;
         height: 26%;
         border-radius: 10px;
         align-items: center;
@@ -530,8 +556,21 @@ h4 .estilo-p {
 
     .btn {
         margin-top: 20px;
-        margin-left: 60px;
+        margin-left: 70px;
+        font-size: 1rem;
 
+
+    }
+
+    .raioLuz::before {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 45%;
+        background-color: #faf9f9;
+        transform: perspective(3px) rotateX(17deg) scale(0.5, 0.300);
+        filter: blur(2px);
+        opacity: 1;
     }
 
 }
